@@ -1,11 +1,15 @@
 <h1>Word Definer</h1>
 
 <h3>Available Words</h3>
-<h4>Click a word to see it's definition</h4>
-  <ul>
-    <li><a href="/words/new">Shoe</a></li>
-    <li><a href="/words/new">Leaf</a></li>
-    <li><a href="/words/new">Airplane</a></li>
-    <li><a href="/words/new">Dog</a></li>
-  </ul>
 
+<% if @words.any? %>
+  <ul>
+    <% @words.each do |word| %>
+      <li><%= word.val %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no words to display.</p>
+<% end %>
+
+<a href="/words/new">Add a new word</a>

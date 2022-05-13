@@ -5,7 +5,8 @@ require('pry')
 also_reload('lib/**/*.rb')
 
 class Definition
-  @@defs = {}
+  attr_reader :value, :id
+  @@definitions = {}
   @@id_count = 0
 
   def initialize(value, id)
@@ -13,5 +14,7 @@ class Definition
     @id = id || @id_count += 1
   end
 
-  def
+  def self.all
+  end
+
 end

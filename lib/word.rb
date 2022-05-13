@@ -42,4 +42,9 @@ class Word
   def update(val)
     @val = val
   end
+
+  def defs
+    Definition.find_by_word(self.id)
+  end
+
 end

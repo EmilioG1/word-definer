@@ -1,6 +1,7 @@
 require 'rspec'
 require 'pry'
 require 'definition'
+require 'word'
 
 describe ('#Definition') do
   before(:each) do
@@ -72,8 +73,28 @@ describe ('#Definition') do
     it("updates a definition by id") do
       defs = Definition.new("caio", @word.id, nil)
       defs.save()
-      defs.update("bonjour")
+      defs.update("bonjour", nil)
       expect(defs.val).to(eq("bonjour"))
+    end
+  end
+
+  describe('.find_by_word') do
+    it("finds definitions for a word") do
+      word2 = Word.new("small", nil)
+      word2.save
+      defs = Definition.new("something little", @word.id, nil)
+      defs.save()
+      defs2 = Definition.new("opposite of big", word2.id , nil)
+      defs2.save()
+      expect(Definition.find_by_word(word2.id)).to(eq([defs2]))
+    end
+  end
+
+  describe('#words') do
+    it("finds the word a definition belongs to") do
+      defs = Definition.new("a color", @word.id, nil)
+      defs.save()
+      expect(defs.words()).to(eq(@word))
     end
   end
 end

@@ -46,7 +46,23 @@ class Definition
     @@definitions.delete(self.id)
   end
 
-  def update(val)
-    @val = val
+  def update(val, word_id)
+    self.val = val
+    self.word_id = word_id
+    @@definitions[self.id] = Definition.new(self.val, self.word_id, self.id)
+  end
+
+  def self.find_by_word(w_id)
+    defs = []
+    @@definitions.values.each do |x|
+      if x.word_id == w_id
+        defs.push(x)
+      end
+    end
+    defs
+  end
+
+  def words
+    Word.find(self.word_id)
   end
 end

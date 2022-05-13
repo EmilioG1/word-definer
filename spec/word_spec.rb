@@ -3,9 +3,9 @@ require 'pry'
 require 'word'
 
 describe '#Word' do
-  # before(:each) do
-  #   Word.clear()
-  # end
+  before(:each) do
+    Word.clear()
+  end
 
   describe('.all') do
     it('returns an empty array when there are no words') do
@@ -30,13 +30,13 @@ describe '#Word' do
   end
 
   describe('.clear') do
-    it('clears all words') do
-      word1 = Word.new('caio', nil)
-      word1.save()
-      word2 = Word.new('bonjour', nil)
+    it("clears all words") do
+      word = Word.new("caio", nil)
+      word.save()
+      word2 = Word.new("bonjour", nil)
       word2.save()
       Word.clear()
-      expect(Word.clear()).to(eq([]))
+      expect(Word.all).to(eq([]))
     end
   end
 end

@@ -5,8 +5,7 @@ require('pry')
 also_reload('lib/**/*.rb')
 
 class Word
-  attr_accessor :val
-  attr_reader :id
+  attr_reader :val, :id
   @@words = {}
   @@id_count = 0
   
@@ -28,6 +27,7 @@ class Word
   end
 
   def self.clear
-    
+    @@words = {}
+    @@id_count = 0
   end
 end

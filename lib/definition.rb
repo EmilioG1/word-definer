@@ -11,7 +11,7 @@ class Definition
   @@definitions = {}
   @@id_count = 0
 
-  def initialize(val, id)
+  def initialize(val, word_id, id)
     @val = val
     @word_id = word_id
     @id = id || @@id_count += 1
@@ -30,7 +30,7 @@ class Definition
   end
 
   def save
-    @@definitions[self.id] = Definition.new(self.val, self.id)
+    @@definitions[self.id] = Definition.new(self.val, self.word_id, self.id)
   end
 
   def self.clear

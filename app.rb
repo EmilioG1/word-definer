@@ -24,8 +24,8 @@ get('/words/:id') do
   erb(:word)
 end
 
-post('/words') do
-  value = params[:word_value]
+post('/word') do
+  val = params[:word]
   word = Word.new(val, nil)
   word.save()
   @words = Word.all()
@@ -41,5 +41,19 @@ patch('/words/:id') do
   @word = Word.find(params[:id].to_i())
   @word.update(params[:val])
   @word = Word.all
+  erb(:words)
+end
+
+patch('/words/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.update(params[:val])
+  @words = Word.all
+  erb(:words)
+end
+
+delete('/words/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.delete()
+  @words = Board.all
   erb(:words)
 end

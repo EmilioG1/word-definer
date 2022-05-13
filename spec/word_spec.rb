@@ -20,4 +20,14 @@ describe '#Word' do
       expect(word1).to(eq(word2))
     end
   end
+
+  describe('#save') do
+    it('saves a word') do
+      word1 = Word.new('caio', nil)
+      word1.save()
+      word2 = Word.new('bonjour', nil)
+      word2.save()
+      expect(Word.all).to(eq(word1,word2))
+    end
+  end
 end

@@ -5,7 +5,7 @@ require('pry')
 also_reload('lib/**/*.rb')
 
 class Word
-  attr_accessor :val
+  attr_accessor :val, :id
   @@words = {}
   @@id_count = 0
   
@@ -20,5 +20,9 @@ class Word
 
   def ==(word_to_compare)
     self.val() == word_to_compare.val()
+  end
+
+  def save
+    
   end
 end

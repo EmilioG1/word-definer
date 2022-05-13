@@ -34,4 +34,8 @@ class Word
   def self.find(id)
     @@words[id]
   end
+
+  def delete
+    
+  end
 end

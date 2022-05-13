@@ -15,6 +15,7 @@ class Definition
   end
 
   def self.all
+    @@definitions.values()
   end
 
 end

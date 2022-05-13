@@ -26,4 +26,8 @@ class Word
   def save
     @@words[self.id] = Word.new(self.val, self.id)
   end
+
+  def self.clear
+    
+  end
 end

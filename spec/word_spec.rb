@@ -25,9 +25,7 @@ describe '#Word' do
     it('saves a word') do
       word1 = Word.new('caio', nil)
       word1.save()
-      word2 = Word.new('bonjour', nil)
-      word2.save()
-      expect(Word.all).to(eq(word1,word2))
+      expect(Word.all).to(eq([word1]))
     end
   end
 end

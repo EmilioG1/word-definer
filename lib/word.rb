@@ -5,7 +5,8 @@ require('pry')
 also_reload('lib/**/*.rb')
 
 class Word
-  attr_accessor :val, :id
+  attr_accessor :val
+  attr_reader :id
   @@words = {}
   @@id_count = 0
   
@@ -23,6 +24,6 @@ class Word
   end
 
   def save
-    
+    @@words[self.id] = Word.new(self.val, self.id)
   end
 end

@@ -39,6 +39,7 @@ class Word
     @@words.delete(self.id)
   end
 
-  def update(name)
+  def update(val)
+    @val = val
   end
 end

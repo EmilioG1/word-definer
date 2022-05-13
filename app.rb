@@ -65,21 +65,21 @@ end
 
 post('/words/:id/definitions') do
   @word = Word.find(params[:id].to_i())
-  defs = Definition.new(params[:defs_name], @word.id, nil)
-  defs.save()
+  @defs = Definition.new(params[:defs_name], @word.id, nil)
+  @defs.save()
   erb(:word)
 end
 
 patch('/words/:id/definitions/:definition_id') do
   @word = Word.find(params[:id].to_i())
-  defs = Definition.find(params[:definition_id].to_i())
-  defs.update(params[:val], @word.id)
+  @defs = Definition.find(params[:definition_id].to_i())
+  @defs.update(params[:val], @word.id)
   erb(:word)
 end
 
 delete('/albums/:id/songs/:definition_id') do
-  defs = Definition.find(params[:definition_id].to_i())
-  defs.delete
+  @defs = Definition.find(params[:definition_id].to_i())
+  @defs.delete
   @word = Word.find(params[:id].to_i())
   erb(:word)
 end

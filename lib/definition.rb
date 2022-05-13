@@ -53,13 +53,13 @@ class Definition
   end
 
   def self.find_by_word(w_id)
-    defs = []
+    array = []
     @@definitions.values.each do |x|
       if x.word_id == w_id
-        defs.push(x)
+        array.push(x)
       end
     end
-    defs
+    array
   end
 
   def words

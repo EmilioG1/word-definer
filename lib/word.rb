@@ -43,7 +43,7 @@ class Word
     @val = val
   end
 
-  def defs
+  def fin
     Definition.find_by_word(self.id)
   end
 

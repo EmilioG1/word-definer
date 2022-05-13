@@ -80,7 +80,7 @@ describe '#Word' do
       defs.save()
       defs2 = Definition.new("a feeling", word.id, nil)
       defs2.save()
-      expect(word.defs).to(eq([defs, defs2]))
+      expect(word.fin).to(eq([defs, defs2]))
     end
   end
 end

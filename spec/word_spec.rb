@@ -57,7 +57,7 @@ describe '#Word' do
       word.save()
       word2 = Word.new("bonjour", nil)
       word2.save()
-      expect(Word.find(word.id)).to(eq([word]))
+      expect(Word.find(word.id)).to(eq((word)))
     end
   end
 end

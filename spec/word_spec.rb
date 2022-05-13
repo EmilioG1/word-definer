@@ -60,4 +60,13 @@ describe '#Word' do
       expect(Word.all).to(eq([word2]))
     end
   end
+
+  describe('#update') do
+    it("updates a word by id") do
+      word = Word.new("caio", nil)
+      word.save()
+      word.update("bonjour")
+      expect(word.name).to(eq("bonjour"))
+    end
+  end
 end

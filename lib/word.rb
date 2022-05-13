@@ -38,4 +38,7 @@ class Word
   def delete
     @@words.delete(self.id)
   end
+
+  def update(name)
+  end
 end

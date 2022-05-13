@@ -15,8 +15,8 @@ describe '#Word' do
 
   describe('#==') do
     it('checks if it has the same attributes as other words') do
-      word1 = Word.new('hello')
-      word2 = Word.new('hello')
+      word1 = Word.new('hello', nil)
+      word2 = Word.new('hello', nil)
       expect(word1).to(eq(word2))
     end
   end

@@ -9,7 +9,7 @@ class Word
   @@words = {}
   @@id_count = 0
   
-  def initialize(val)
+  def initialize(val, id)
     @val = val
     @id = id || @@id_count += 1
   end
@@ -19,5 +19,6 @@ class Word
   end
 
   def ==(word_to_compare)
+    self.val() == word_to_compare.val()
   end
 end

@@ -19,7 +19,7 @@ class Word
   end
 
   def ==(word_to_compare)
-    self.val() == word_to_compare.val()
+    self.val() == word_to_compare.val() && self.id() == word_to_compare.id()
   end
 
   def save
@@ -29,5 +29,9 @@ class Word
   def self.clear
     @@words = {}
     @@id_count = 0
+  end
+
+  def self.find(id)
+
   end
 end

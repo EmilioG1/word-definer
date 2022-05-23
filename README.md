@@ -19,10 +19,10 @@ _A kid's 'dictionary' program that allows the user to create words and provide t
 * _Navigate to the top level of word_definer main branch and open in code editor_
 * _run bundle in terminal to add gems_
 * _run rspec in terminal to test code_
+* _run ruby app.rb in terminal, then copy/paste localhost into url to test routing_
 
 
-## Known Bugs
-* _Routing issues with updating word definitions_
+## No Known Bugs
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

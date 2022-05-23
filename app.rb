@@ -24,7 +24,7 @@ get('/words/:id') do
   erb(:word)
 end
 
-post('/word') do
+post('/words') do
   val = params[:word]
   word = Word.new(val, nil)
   word.save()

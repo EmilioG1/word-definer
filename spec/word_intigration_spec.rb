@@ -7,7 +7,7 @@ describe('create a word path', {:type => :feature}) do
   it('creates a word and then goes to the word page') do
     visit('/words')
     click_on('Add a new word')
-    fill_in('def_name', :with => 'house')
+    fill_in('word', :with => 'house')
     click_on('Go!')
     expect(page).to have_content('house')
   end

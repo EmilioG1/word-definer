@@ -1,6 +1,6 @@
 # Word Definer
 
-#### A program to give words and their definitions
+#### A program to input words and their definitions
 
 #### By Emilio Gonzales
 
